@@ -28,13 +28,24 @@ jobs:
       run: |
         wget https://fr24api.flightradar24.com/documentation/Flightradar24-API.yaml -O Flightradar24-API.yaml
 
+    - name: Create Configuration File
+      run: |
+        echo '{
+          "packageName": "flightradar24",
+          "projectName": "Flightradar24 Python SDK",
+          "packageVersion": "1.0.0"
+        }' > config.json
+
+    
+    
+    
     - name: Generate Python SDK
       run: |
-        java -jar openapi-generator-cli.jar generate -i Flightradar24-API.yaml -g python -o ./sdk
+        java -jar openapi-generator-cli.jar generate -i Flightradar24-API.yaml -g python -o ./sdk -c config.json
 
     - name: Generate SDK Documentation
       run: |
-        java -jar openapi-generator-cli.jar generate -i Flightradar24-API.yaml -g html -o ./docs
+        java -jar openapi-generator-cli.jar generate -i Flightradar24-API.yaml -g html -o ./docs -c config.json
 
     - name: Commit and push generated files
       run: |
