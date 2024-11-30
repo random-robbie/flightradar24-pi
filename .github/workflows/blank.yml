@@ -1,0 +1,47 @@
+name: Generate SDK and Documentation
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  generate-sdk:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Set up JDK 11
+      uses: actions/setup-java@v3
+      with:
+        java-version: '11'
+        distribution: 'adopt'
+
+    - name: Download OpenAPI Generator
+      run: |
+        wget https://repo1.maven.org/maven2/org/openapitools/openapi-generator-cli/6.2.1/openapi-generator-cli-6.2.1.jar -O openapi-generator-cli.jar
+
+    - name: Download Flightradar24 OpenAPI file
+      run: |
+        wget https://fr24api.flightradar24.com/documentation/Flightradar24-API.yaml -O Flightradar24-API.yaml
+
+    - name: Generate Python SDK
+      run: |
+        java -jar openapi-generator-cli.jar generate -i Flightradar24-API.yaml -g python -o ./sdk
+
+    - name: Generate SDK Documentation
+      run: |
+        java -jar openapi-generator-cli.jar generate -i Flightradar24-API.yaml -g html -o ./docs
+
+    - name: Commit and push generated files
+      run: |
+        git config --global user.name 'github-actions'
+        git config --global user.email 'github-actions@github.com'
+        git add sdk docs
+        git commit -m "Generated SDK and documentation"
+        git push
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
