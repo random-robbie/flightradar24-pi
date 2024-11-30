@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.airline import Airline
+from flightradar24.models.airline import Airline
 
 # TODO update the JSON string below
 json = "{}"

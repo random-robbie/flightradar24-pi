@@ -31,7 +31,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.flight import Flight
+from flightradar24.models.flight import Flight
 
 # TODO update the JSON string below
 json = "{}"

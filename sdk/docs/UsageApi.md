@@ -1,4 +1,4 @@
-# openapi_client.UsageApi
+# flightradar24.UsageApi
 
 All URIs are relative to *https://fr24api.flightradar24.com*
 
@@ -19,14 +19,14 @@ Get info on API account usage
 * Bearer Authentication (Authorization):
 
 ```python
-import openapi_client
-from openapi_client.models.get_api_usage200_response import GetApiUsage200Response
-from openapi_client.rest import ApiException
+import flightradar24
+from flightradar24.models.get_api_usage200_response import GetApiUsage200Response
+from flightradar24.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://fr24api.flightradar24.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = flightradar24.Configuration(
     host = "https://fr24api.flightradar24.com"
 )
 
@@ -36,14 +36,14 @@ configuration = openapi_client.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: Authorization
-configuration = openapi_client.Configuration(
+configuration = flightradar24.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with flightradar24.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.UsageApi(api_client)
+    api_instance = flightradar24.UsageApi(api_client)
     accept_version = 'v1' # str | Specifies the FR24 API version. The currently available version is `v1`. (default to 'v1')
     period = 24h # str |  (optional) (default to 24h)
 

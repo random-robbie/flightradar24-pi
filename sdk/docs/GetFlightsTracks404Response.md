@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.get_flights_tracks404_response import GetFlightsTracks404Response
+from flightradar24.models.get_flights_tracks404_response import GetFlightsTracks404Response
 
 # TODO update the JSON string below
 json = "{}"

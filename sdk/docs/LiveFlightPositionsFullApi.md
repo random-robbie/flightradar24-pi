@@ -1,4 +1,4 @@
-# openapi_client.LiveFlightPositionsFullApi
+# flightradar24.LiveFlightPositionsFullApi
 
 All URIs are relative to *https://fr24api.flightradar24.com*
 
@@ -19,14 +19,14 @@ Returns comprehensive real-time information on aircraft flight movements, includ
 * Bearer Authentication (Authorization):
 
 ```python
-import openapi_client
-from openapi_client.models.get_live_flight_positions_full200_response import GetLiveFlightPositionsFull200Response
-from openapi_client.rest import ApiException
+import flightradar24
+from flightradar24.models.get_live_flight_positions_full200_response import GetLiveFlightPositionsFull200Response
+from flightradar24.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://fr24api.flightradar24.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = flightradar24.Configuration(
     host = "https://fr24api.flightradar24.com"
 )
 
@@ -36,14 +36,14 @@ configuration = openapi_client.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: Authorization
-configuration = openapi_client.Configuration(
+configuration = flightradar24.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with flightradar24.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.LiveFlightPositionsFullApi(api_client)
+    api_instance = flightradar24.LiveFlightPositionsFullApi(api_client)
     accept_version = 'v1' # str | Specifies the FR24 API version. The currently available version is `v1`. (default to 'v1')
     bounds = '42.473,37.331,-10.014,-4.115' # str | Coordinates defining an area. Order: north, south, west, east (comma-separated float values). Up to 3 decimal points will be processed. (optional)
     flights = 'CA4515,UA1742' # str | Flight numbers (comma-separated values). (optional)

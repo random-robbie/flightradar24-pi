@@ -1,0 +1,13 @@
+# flake8: noqa
+
+# import apis into api package
+from flightradar24.api.airlines_light_api import AirlinesLightApi
+from flightradar24.api.airports_full_api import AirportsFullApi
+from flightradar24.api.airports_light_api import AirportsLightApi
+from flightradar24.api.flight_tracks_api import FlightTracksApi
+from flightradar24.api.historic_flight_positions_full_api import HistoricFlightPositionsFullApi
+from flightradar24.api.historic_flight_positions_light_api import HistoricFlightPositionsLightApi
+from flightradar24.api.live_flight_positions_full_api import LiveFlightPositionsFullApi
+from flightradar24.api.live_flight_positions_light_api import LiveFlightPositionsLightApi
+from flightradar24.api.usage_api import UsageApi
+

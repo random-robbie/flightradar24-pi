@@ -1,4 +1,4 @@
-# openapi_client.FlightTracksApi
+# flightradar24.FlightTracksApi
 
 All URIs are relative to *https://fr24api.flightradar24.com*
 
@@ -19,14 +19,14 @@ Returns a flight with positional tracks for both live and historical flights bas
 * Bearer Authentication (Authorization):
 
 ```python
-import openapi_client
-from openapi_client.models.flight_tracks import FlightTracks
-from openapi_client.rest import ApiException
+import flightradar24
+from flightradar24.models.flight_tracks import FlightTracks
+from flightradar24.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://fr24api.flightradar24.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = flightradar24.Configuration(
     host = "https://fr24api.flightradar24.com"
 )
 
@@ -36,14 +36,14 @@ configuration = openapi_client.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: Authorization
-configuration = openapi_client.Configuration(
+configuration = flightradar24.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with flightradar24.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.FlightTracksApi(api_client)
+    api_instance = flightradar24.FlightTracksApi(api_client)
     accept_version = 'v1' # str | Specifies the FR24 API version. The currently available version is `v1`. (default to 'v1')
     flight_id = '34242a02' # str | Flightradar24 id of active flight in hexadecimal (optional)
 
