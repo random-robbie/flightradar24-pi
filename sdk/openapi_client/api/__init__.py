@@ -1,0 +1,13 @@
+# flake8: noqa
+
+# import apis into api package
+from openapi_client.api.airlines_light_api import AirlinesLightApi
+from openapi_client.api.airports_full_api import AirportsFullApi
+from openapi_client.api.airports_light_api import AirportsLightApi
+from openapi_client.api.flight_tracks_api import FlightTracksApi
+from openapi_client.api.historic_flight_positions_full_api import HistoricFlightPositionsFullApi
+from openapi_client.api.historic_flight_positions_light_api import HistoricFlightPositionsLightApi
+from openapi_client.api.live_flight_positions_full_api import LiveFlightPositionsFullApi
+from openapi_client.api.live_flight_positions_light_api import LiveFlightPositionsLightApi
+from openapi_client.api.usage_api import UsageApi
+
