@@ -22,7 +22,7 @@ jobs:
 
     - name: Download OpenAPI Generator
       run: |
-        wget https://repo1.maven.org/maven2/org/openapitools/openapi-generator-cli/6.2.1/openapi-generator-cli-6.2.1.jar -O openapi-generator-cli.jar
+        wget https://repo1.maven.org/maven2/org/openapitools/openapi-generator-cli/7.9.0/openapi-generator-cli-7.9.0.jar -O openapi-generator-cli.jar
 
     - name: Download Flightradar24 OpenAPI file
       run: |
@@ -44,4 +44,4 @@ jobs:
         git commit -m "Generated SDK and documentation"
         git push
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.GITHUBTOKEN }}
